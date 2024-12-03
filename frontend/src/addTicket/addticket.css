@@ -1,0 +1,70 @@
+.addTicket{
+    background-color: white;
+    width: 50%; /* Apply 50% width only on larger screens */
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.065);
+}
+
+.addTicketForm .inputGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: -8px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.addTicketForm .inputGroup label {
+    padding-top: 6px;
+}
+
+.addTicketForm .back-btn {
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.addTicket h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    border-bottom: 0px !important;
+}
+
+.submit button {
+    width: 150px;
+    font-size:14px;
+}
+
+.logout-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px !important;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .addTicket {
+        width: 90%; /* Default width for smaller screens */
+        padding: 30px;
+    }
+}
