@@ -70,14 +70,21 @@ const Tickets = ({ setIsAuthenticated }) => {
 
     // Delete Ticket
     const deleteTicket = async (ticket_id) => {
-        await axios.delete(`http://localhost:8000/api/delete/ticket/${ticket_id}`)
-        .then((response) => {
-            setTickets((prevTicket) => prevTicket.filter((ticket)=>ticket._id !==ticket_id));
-            toast.success(response.data.message, {position:"top right"});
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+        // Show confirmation box
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this ticket?"
+        );
+
+        if (confirmDelete) {
+            await axios.delete(`http://localhost:8000/api/delete/ticket/${ticket_id}`)
+            .then((response) => {
+                setTickets((prevTicket) => prevTicket.filter((ticket)=>ticket._id !==ticket_id));
+                toast.success(response.data.message, {position:"top right"});
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
     }
 
     // Logout function
