@@ -39,7 +39,7 @@ CRUD functionalities for Ticketing module using MERN stack
 
 **5. Delete Ticket**
    - Delete tickets with confirmation prompt.
-   ![image](https://github.com/user-attachments/assets/8d588fee-52f2-4258-8dda-dd7090adf7c0)
+   ![image](https://github.com/user-attachments/assets/400d599c-ae4c-4407-a342-5949cd0ea5fa)
 
 ## Conclusion
 This Ticket Management System implemented using the MERN stack allows users to efficiently manage tickets. It provides role-based access control, CRUD functionality, and a simple UI for smooth user interaction.
