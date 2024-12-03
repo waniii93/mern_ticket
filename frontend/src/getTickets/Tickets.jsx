@@ -3,6 +3,7 @@ import "./tickets.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import Swal from "sweetalert2";
 
 const Tickets = ({ setIsAuthenticated }) => {
     // localStorage.clear();
@@ -70,14 +71,27 @@ const Tickets = ({ setIsAuthenticated }) => {
 
     // Delete Ticket
     const deleteTicket = async (ticket_id) => {
-        await axios.delete(`http://localhost:8000/api/delete/ticket/${ticket_id}`)
-        .then((response) => {
-            setTickets((prevTicket) => prevTicket.filter((ticket)=>ticket._id !==ticket_id));
-            toast.success(response.data.message, {position:"top right"});
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+        // Show confirmation box
+        const confirmDelete = await Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to delete this ticket? This action cannot be undone.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
+        });
+
+        if (confirmDelete.isConfirmed) {
+            await axios.delete(`http://localhost:8000/api/delete/ticket/${ticket_id}`)
+            .then((response) => {
+                setTickets((prevTicket) => prevTicket.filter((ticket)=>ticket._id !==ticket_id));
+                Swal.fire('Deleted!', 'Your ticket has been deleted.', 'success');
+            })
+            .catch((error) => {
+                console.log(error);
+                Swal.fire('Error', 'Failed to delete ticket. Please try again later.', 'error');
+            })
+        }
     }
 
     // Logout function
