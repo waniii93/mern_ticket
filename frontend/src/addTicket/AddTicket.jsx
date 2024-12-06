@@ -113,35 +113,35 @@ const AddTicket = ({ setIsAuthenticated }) => {
                                 <i className="fa-solid fa-backward"></i> Back
                             </Link>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="name" className="col-sm-2 fw-bold">Name</label>
+                                <label htmlFor="name" className="col-sm-2 fw-bold"><span class="required">* </span>Name</label>
                                 <div className="col-sm-10">
                                     <input type="text" id="name" name="name" placeholder="Name" className="form-control" onChange={inputHandler} />
                                     {errorMessages.name && <div style={{ color: 'red' }}>{errorMessages.name}</div>}
                                 </div>
                             </div>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="email" className="col-sm-2 fw-bold">Email</label>
+                                <label htmlFor="email" className="col-sm-2 fw-bold"><span class="required">* </span>Email</label>
                                 <div className="col-sm-10">
                                     <input type="text" id="email" name="email" placeholder="Email" className="form-control" onChange={inputHandler} />
                                     {errorMessages.email && <div style={{ color: 'red' }}>{errorMessages.email}</div>}
                                 </div>
                             </div>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="subject" className="col-sm-2 fw-bold">Subject</label>
+                                <label htmlFor="subject" className="col-sm-2 fw-bold"><span class="required">* </span>Subject</label>
                                 <div className="col-sm-10">
                                     <input type="text" id="subject" name="subject" placeholder="Subject" className="form-control" onChange={inputHandler} />
                                     {errorMessages.subject && <div style={{ color: 'red' }}>{errorMessages.subject}</div>}
                                 </div>
                             </div>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="message" className="col-sm-2 fw-bold">Message</label>
+                                <label htmlFor="message" className="col-sm-2 fw-bold"><span class="required">* </span>Message</label>
                                 <div className="col-sm-10">
                                     <textarea id="message" name="message" placeholder="Message" className="form-control" onChange={inputHandler} />
                                     {errorMessages.message && <div style={{ color: 'red' }}>{errorMessages.message}</div>}
                                 </div>
                             </div>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="category" className="col-sm-2 fw-bold">Category</label>
+                                <label htmlFor="category" className="col-sm-2 fw-bold"><span class="required">* </span>Category</label>
                                 <div className="col-sm-10">
                                     <select id="category" name="category" className="form-control form-select" onChange={inputHandler} >
                                         <option value="">-- Select Category --</option>
@@ -154,7 +154,7 @@ const AddTicket = ({ setIsAuthenticated }) => {
                                 </div>
                             </div>
                             <div className="inputGroup row mb-4">
-                                <label htmlFor="priority" className="col-sm-2 fw-bold">Priority</label>
+                                <label htmlFor="priority" className="col-sm-2 fw-bold"><span class="required">* </span>Priority</label>
                                 <div className="col-sm-10">
                                     <select id="priority" name="priority" className="form-control form-select" onChange={inputHandler} >
                                         <option value="">-- Select Priority --</option>
